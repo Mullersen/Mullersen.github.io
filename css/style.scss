@@ -1,0 +1,292 @@
+    @import "_variables";
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    html {
+        font-size: 20px;
+    }
+    
+    #Grid-container {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: minmax(10vh, auto) minmax(85vh, auto) minmax(5vh, auto);
+        background-color: $background-color;
+    }
+    
+    #Header-container {
+        z-index: 1000;
+        position: sticky;
+        top: 0;
+        background: $highlight-color-two;
+        display: grid;
+        width: 100%;
+        align-items: center;
+        justify-items: center;
+        font-family: $link-font;
+        color: $background-color;
+        font-size: 1.2rem;
+        grid-template-columns: repeat(auto-fit, minmax(216px, auto));
+        #Logo-link {
+            grid-area: Logo;
+            max-height: 16vh;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+        }
+        .Phonenumber-class {
+            display: none;
+        }
+        a:link {
+            color: $background-color;
+            text-decoration: none;
+            padding: 0px 2px 0px 2px;
+        }
+        a:visited {
+            color: $background-color;
+        }
+        a:hover {
+            color: rgb(167, 153, 127);
+        }
+        .Active-link {
+            border-bottom: solid 2px $background-color;
+        }
+        img {
+            height: 100%;
+        }
+    }
+    
+    #Content-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(50vh, auto);
+        align-items: center;
+        justify-items: center;
+        #Hungry-banner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-image: url(../Images/Pizza.jpg);
+            background-repeat: no-repeat;
+            background-size: 100vw;
+            #Hungry-text {
+                position: absolute;
+                top: 20vh;
+                left: 57%;
+                width: 20%;
+                height: 30%;
+                text-align: center;
+                #Hungry-question {
+                    color: $background-color;
+                    font-family: $link-font;
+                    font-size: 1.7rem;
+                    @include button(1px, 1px, 3px, $border-color);
+                    margin-bottom: 6px;
+                }
+                .Hungry-answer {
+                    color: $background-color;
+                    font-family: $Text-font;
+                    font-size: 0.7rem;
+                    font-style: italic;
+                    display: inline;
+                }
+            }
+        }
+        #Opening-hours {
+            padding: 10vh 7vw 10vh 7vw;
+            margin: 15vh 10vw 15vh 10vw;
+            border-bottom: $Default-border;
+            border-top: $Default-border;
+            font-family: $link-font;
+            font-size: 3.5rem;
+            text-align: center;
+        }
+        #Homepage-text {
+            font-family: $Text-font;
+            text-align: center;
+            margin: 15vh 10vw 15vh 10vw;
+        }
+    }
+    
+    .Menu-headers {
+        font-family: $link-font;
+        margin: 7vh 5vw 0vh 5vw;
+        padding-bottom: 4px;
+        color: $foreground-color;
+        font-size: 1.2rem;
+        border-bottom: $Default-border;
+    }
+    
+    .Menu-grid {
+        display: grid;
+        margin: 5vh 5vw 2vh 5vw;
+        width: 90vw;
+        grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+        column-gap: 5vh;
+        row-gap: 6vh;
+        align-items: center;
+        justify-items: center;
+        .Pizza-item-container {
+            width: 330px;
+            height: 400px;
+            background-color: white;
+            border: 1px solid $foreground-color;
+            border-radius: 5px;
+            text-align: center;
+            align-items: center;
+            .Menu-images {
+                width: 90%;
+                border-radius: 10px;
+            }
+            .Pizza-header {
+                font-size: 1.1rem;
+                font-family: $link-font;
+                color: $foreground-color;
+                margin: 5px;
+                padding: 2px;
+            }
+            .Pizza-text {
+                font-size: 0.8rem;
+                font-family: $Text-font;
+                margin: 4px;
+                color: $foreground-color
+            }
+        }
+        .Menu-item-container {
+            width: 330px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid $foreground-color;
+            border-radius: 5px;
+            text-align: center;
+            align-items: center;
+            .Menu-images {
+                width: 90%;
+                border-radius: 10px;
+            }
+            .Pizza-header {
+                font-size: 1.1rem;
+                font-family: $link-font;
+                color: $foreground-color;
+                margin: 5px;
+                padding: 2px;
+            }
+            .Pizza-text {
+                font-size: 0.8rem;
+                font-family: $Text-font;
+                margin: 4px;
+                color: $foreground-color
+            }
+        }
+    }
+    
+    #About-us-grid {
+        display: grid;
+        margin: 10vh 6vw 5vh 6vw;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 2fr 1fr;
+        justify-items: center;
+        column-gap: 4vw;
+        row-gap: 5vh;
+        .About-us-header {
+            padding: 5px 1px 7px 1px;
+            border-bottom: $Default-border;
+            font-family: $link-font;
+            color: $foreground-color;
+        }
+        .About-us-text {
+            padding-left: 4px;
+            font-family: $Text-font;
+            color: $foreground-color;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+        #About-us-italics {
+            font-style: italic;
+        }
+        #Pizza-video {
+            width: 100%;
+            height: auto;
+        }
+        #Who-are-we-image {
+            width: 100%;
+        }
+    }
+    
+    #Location {
+        width: 100vw;
+        height: 100vh;
+        #Maps-location {
+            padding: 5vh 4vw 15vh 4vw;
+            margin: 0vh 6vw 0vh 6vw;
+            border-top: $Default-border;
+            width: 80%;
+            height: 500px;
+        }
+    }
+    
+    #Footer-container {
+        display: grid;
+        grid-template-columns: 45vw 45vw;
+        grid-template-rows: 1fr;
+        background-color: $foreground-color;
+        font-size: 0.8rem;
+        padding: 5vh 5vw 5vh 5vw;
+        font-family: $Text-font;
+        #Right-footer-column {
+            text-align: right;
+        }
+    }
+    
+    @media (max-width: 1024px) {
+        #Header-container {
+            top: -17px;
+            grid-template-rows: 17vh repeat(3, 4vh);
+            grid-template-columns: 1fr;
+            font-size: 1.2rem;
+        }
+        #Empty-div {
+            display: none;
+        }
+        #Header-container #Phonenumber-link {
+            display: block;
+        }
+        #Phonenumber-text {
+            display: none;
+        }
+        #Content-container #Hungry-banner #Hungry-text {
+            position: absolute;
+            top: 13vh;
+            left: 57%;
+            width: 40%;
+            height: 30%;
+        }
+    }
+    
+    @media (max-width: 412px) {
+        #Header-container {
+            top: -125px;
+            grid-template-rows: 17vh repeat(3, 6vh);
+            grid-template-columns: 1fr;
+            row-gap: 2px;
+        }
+        #Empty-div {
+            display: none;
+        }
+        #Header-container #Phonenumber-link {
+            display: block;
+        }
+        #Phonenumber-text {
+            display: none;
+        }
+        #Content-container #Hungry-banner #Hungry-text {
+            position: absolute;
+            top: 5vh;
+            left: 20%;
+            width: 60%;
+            height: 30%;
+        }
+        #Location #Maps-location {
+            height: 400px;
+        }
+    }

@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
+#Grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100vw;
+      grid-template-columns: 100vw;
+  -ms-grid-rows: minmax(10vh, auto) minmax(85vh, auto) minmax(5vh, auto);
+      grid-template-rows: minmax(10vh, auto) minmax(85vh, auto) minmax(5vh, auto);
+  background-color: #F2E8D9;
+}
+
+#Header-container {
+  z-index: 1000;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #A73127;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  font-family: "Montserrat", sans-serif;
+  color: #F2E8D9;
+  font-size: 1.2rem;
+  -ms-grid-columns: (minmax(216px, auto))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(216px, auto));
+}
+
+#Header-container #Logo-link {
+  grid-area: Logo;
+  max-height: 16vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+#Header-container .Phonenumber-class {
+  display: none;
+}
+
+#Header-container a:link {
+  color: #F2E8D9;
+  text-decoration: none;
+  padding: 0px 2px 0px 2px;
+}
+
+#Header-container a:visited {
+  color: #F2E8D9;
+}
+
+#Header-container a:hover {
+  color: #a7997f;
+}
+
+#Header-container .Active-link {
+  border-bottom: solid 2px #F2E8D9;
+}
+
+#Header-container img {
+  height: 100%;
+}
+
+#Content-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: minmax(50vh, auto);
+      grid-template-rows: minmax(50vh, auto);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+#Content-container #Hungry-banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(../Images/Pizza.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vw;
+}
+
+#Content-container #Hungry-banner #Hungry-text {
+  position: absolute;
+  top: 20vh;
+  left: 57%;
+  width: 20%;
+  height: 30%;
+  text-align: center;
+}
+
+#Content-container #Hungry-banner #Hungry-text #Hungry-question {
+  color: #F2E8D9;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.7rem;
+  -webkit-box-shadow: 1px 1px 3px #000000;
+          box-shadow: 1px 1px 3px #000000;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border: solid 2px #000000;
+  margin-bottom: 6px;
+}
+
+#Content-container #Hungry-banner #Hungry-text .Hungry-answer {
+  color: #F2E8D9;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.7rem;
+  font-style: italic;
+  display: inline;
+}
+
+#Content-container #Opening-hours {
+  padding: 10vh 7vw 10vh 7vw;
+  margin: 15vh 10vw 15vh 10vw;
+  border-bottom: solid 2px #796F5B;
+  border-top: solid 2px #796F5B;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+#Content-container #Homepage-text {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  margin: 15vh 10vw 15vh 10vw;
+}
+
+.Menu-headers {
+  font-family: "Montserrat", sans-serif;
+  margin: 7vh 5vw 0vh 5vw;
+  padding-bottom: 4px;
+  color: #796F5B;
+  font-size: 1.2rem;
+  border-bottom: solid 2px #796F5B;
+}
+
+.Menu-grid {
+  display: -ms-grid;
+  display: grid;
+  margin: 5vh 5vw 2vh 5vw;
+  width: 90vw;
+  -ms-grid-columns: (minmax(275px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  -webkit-column-gap: 5vh;
+          column-gap: 5vh;
+  row-gap: 6vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.Menu-grid .Pizza-item-container {
+  width: 330px;
+  height: 400px;
+  background-color: white;
+  border: 1px solid #796F5B;
+  border-radius: 5px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Menu-grid .Pizza-item-container .Menu-images {
+  width: 90%;
+  border-radius: 10px;
+}
+
+.Menu-grid .Pizza-item-container .Pizza-header {
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #796F5B;
+  margin: 5px;
+  padding: 2px;
+}
+
+.Menu-grid .Pizza-item-container .Pizza-text {
+  font-size: 0.8rem;
+  font-family: "Raleway", sans-serif;
+  margin: 4px;
+  color: #796F5B;
+}
+
+.Menu-grid .Menu-item-container {
+  width: 330px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid #796F5B;
+  border-radius: 5px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Menu-grid .Menu-item-container .Menu-images {
+  width: 90%;
+  border-radius: 10px;
+}
+
+.Menu-grid .Menu-item-container .Pizza-header {
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #796F5B;
+  margin: 5px;
+  padding: 2px;
+}
+
+.Menu-grid .Menu-item-container .Pizza-text {
+  font-size: 0.8rem;
+  font-family: "Raleway", sans-serif;
+  margin: 4px;
+  color: #796F5B;
+}
+
+#About-us-grid {
+  display: -ms-grid;
+  display: grid;
+  margin: 10vh 6vw 5vh 6vw;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -ms-grid-rows: 2fr 1fr;
+      grid-template-rows: 2fr 1fr;
+  justify-items: center;
+  -webkit-column-gap: 4vw;
+          column-gap: 4vw;
+  row-gap: 5vh;
+}
+
+#About-us-grid .About-us-header {
+  padding: 5px 1px 7px 1px;
+  border-bottom: solid 2px #796F5B;
+  font-family: "Montserrat", sans-serif;
+  color: #796F5B;
+}
+
+#About-us-grid .About-us-text {
+  padding-left: 4px;
+  font-family: "Raleway", sans-serif;
+  color: #796F5B;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+#About-us-grid #About-us-italics {
+  font-style: italic;
+}
+
+#About-us-grid #Pizza-video {
+  width: 100%;
+  height: auto;
+}
+
+#About-us-grid #Who-are-we-image {
+  width: 100%;
+}
+
+#Location {
+  width: 100vw;
+  height: 100vh;
+}
+
+#Location #Maps-location {
+  padding: 5vh 4vw 15vh 4vw;
+  margin: 0vh 6vw 0vh 6vw;
+  border-top: solid 2px #796F5B;
+  width: 80%;
+  height: 500px;
+}
+
+#Footer-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 45vw 45vw;
+      grid-template-columns: 45vw 45vw;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  background-color: #796F5B;
+  font-size: 0.8rem;
+  padding: 5vh 5vw 5vh 5vw;
+  font-family: "Raleway", sans-serif;
+}
+
+#Footer-container #Right-footer-column {
+  text-align: right;
+}
+
+@media (max-width: 1024px) {
+  #Header-container {
+    top: -17px;
+    -ms-grid-rows: 17vh (4vh)[3];
+        grid-template-rows: 17vh repeat(3, 4vh);
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    font-size: 1.2rem;
+  }
+  #Empty-div {
+    display: none;
+  }
+  #Header-container #Phonenumber-link {
+    display: block;
+  }
+  #Phonenumber-text {
+    display: none;
+  }
+  #Content-container #Hungry-banner #Hungry-text {
+    position: absolute;
+    top: 13vh;
+    left: 57%;
+    width: 40%;
+    height: 30%;
+  }
+}
+
+@media (max-width: 412px) {
+  #Header-container {
+    top: -125px;
+    -ms-grid-rows: 17vh (6vh)[3];
+        grid-template-rows: 17vh repeat(3, 6vh);
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    row-gap: 2px;
+  }
+  #Empty-div {
+    display: none;
+  }
+  #Header-container #Phonenumber-link {
+    display: block;
+  }
+  #Phonenumber-text {
+    display: none;
+  }
+  #Content-container #Hungry-banner #Hungry-text {
+    position: absolute;
+    top: 5vh;
+    left: 20%;
+    width: 60%;
+    height: 30%;
+  }
+  #Location #Maps-location {
+    height: 400px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

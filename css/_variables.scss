@@ -1,0 +1,18 @@
+$highlight-color: #D82424;
+$highlight-color-two: #A73127;
+$background-color:#F2E8D9;
+$border-color:#000000;
+$foreground-color: #796F5B;
+$link-font: 'Montserrat',
+sans-serif;
+$Text-font: 'Raleway',
+sans-serif;
+$Default-border: solid 2px $foreground-color;
+@mixin button($offset-x, $offset-y, $blur-radius, $color) {
+    box-shadow: $offset-x $offset-y $blur-radius $color;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: solid 2px $border-color;
+}
