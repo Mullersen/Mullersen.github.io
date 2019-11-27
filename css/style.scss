@@ -26,6 +26,7 @@ html {
     justify-items: center;
     font-family: $link-font;
     color: $background-color;
+    box-shadow: 2px 0px 2px $border-color;
     font-size: 1.2rem;
     grid-template-columns: repeat(auto-fit, minmax(216px, auto));
     #Logo-link {
@@ -66,33 +67,29 @@ html {
         background-size: 100vw;
         #Hungry-text {
             position: absolute;
-            top: 20vh;
+            top: 24vh;
             left: 57%;
             width: 30%;
-            height: 30%;
             text-align: center;
+            @include button(1px, 1px, 3px, $border-color);
             #Hungry-question {
                 color: $background-color;
                 font-family: $link-font;
-                font-size: 1.7rem;
-                @include button(1px, 1px, 3px, $border-color);
+                font-size: 1.9rem;
                 text-decoration: none;
             }
             .Hungry-answer {
                 color: $background-color;
                 font-family: $Text-font;
-                font-size: 0.7rem;
                 font-style: italic;
                 display: inline;
             }
         }
     }
     #Homepage-text {
-        border-top: $Default-border;
         font-family: $Text-font;
         text-align: center;
-        padding-top: 5vh;
-        margin: 5vh 10vw 10vh 10vw;
+        margin: 7%;
     }
     #Tossing-pizza-container {
         width: 40vw;
@@ -100,6 +97,7 @@ html {
             width: 100%;
             position: relative;
             left: 30vw;
+            margin-bottom: 10vh;
         }
     }
     #Opening-hours {
@@ -148,6 +146,9 @@ html {
         text-align: center;
         align-items: center;
     }
+    .Buy-now-button {
+        @include button(1px, 1px, 3px, $border-color)
+    }
     .Menu-images {
         width: 90%;
         border-radius: 10px;
@@ -175,11 +176,30 @@ html {
     }
 }
 
+#Header-video-grid {
+    display: grid;
+    grid-template-columns: 100VW;
+    grid-template-rows: auto 60vh;
+    justify-items: center;
+    #Page-header {
+        font-family: $link-font;
+        font-size: 1.9rem;
+        color: $foreground-color;
+        text-align: center;
+        margin: 10vh 5vw 10vh 5vw;
+        padding-bottom: 2vh;
+        border-bottom: $Default-border;
+    }
+    #Pizza-video {
+        height: 100%;
+    }
+}
+
 #About-us-grid {
     display: grid;
-    margin: 10vh 6vw 5vh 6vw;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 3fr 2fr;
+    margin: 20vh 6vw 5vh 6vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     justify-items: center;
     column-gap: 4vw;
     row-gap: 5vh;
@@ -199,12 +219,16 @@ html {
     #About-us-italics {
         font-style: italic;
     }
-    #Pizza-video {
-        width: 100%;
-        height: auto;
-    }
     #Who-are-we-image {
         width: 100%;
+    }
+    #Pizza-on-table-image {
+        width: 100%;
+    }
+    .About-us-images {
+        border: 1px solid $foreground-color;
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px $foreground-color;
     }
 }
 
@@ -212,7 +236,7 @@ html {
     width: 100vw;
     #Location-header {
         font-family: $link-font;
-        font-size: 1.2rem;
+        font-size: 1.9rem;
         color: $foreground-color;
         border-top: $Default-border;
         text-align: center;
@@ -280,12 +304,12 @@ html {
     }
 }
 
-@media (max-width: 412px) {
+@media (max-width: 430px) {
     #Header-container {
-        top: -120px;
+        top: -128px;
         grid-template-rows: 17vh repeat(3, 6vh);
         grid-template-columns: 1fr;
-        row-gap: 2px;
+        row-gap: 4px;
     }
     #Empty-div {
         display: none;
@@ -297,18 +321,18 @@ html {
         display: none;
     }
     #Content-container {
-        #Homepage-text {
-            padding-top: 5vh;
-            margin: 0vh 10vw 3vh 10vw
-        }
         #Hungry-banner {
             height: 40vh;
             #Hungry-text {
                 position: absolute;
-                top: 5vh;
-                left: 20%;
+                top: 6vh;
+                left: 17%;
                 width: 60%;
-                height: 30%;
+                height: auto;
+                font-size: 0.8rem;
+                #Hungry-question {
+                    font-size: 1.2rem;
+                }
             }
         }
         #Tossing-pizza-container {
@@ -317,9 +341,12 @@ html {
                 left: 0;
             }
         }
+        #Homepage-text {
+            margin: 5vh 10vw 5vh 10vw
+        }
         #Opening-hours {
             font-size: 1.8rem;
-            margin: 5vh 10vw 5vh 10vw;
+            margin: 0vh 10vw 5vh 10vw;
         }
     }
     #About-us-grid {
@@ -328,5 +355,27 @@ html {
     }
     #Location #Maps-location {
         height: 400px;
+    }
+}
+
+@media (max-width: 375px) {
+    #Header-container {
+        top: -105px;
+    }
+    #Content-container {
+        #Hungry-banner {
+            height: 40vh;
+            #Hungry-text {
+                position: absolute;
+                top: 5vh;
+                left: 17%;
+                width: 60%;
+                height: auto;
+                font-size: 0.8rem;
+                #Hungry-question {
+                    font-size: 1.2rem;
+                }
+            }
+        }
     }
 }
