@@ -7,12 +7,33 @@ $link-font: 'Montserrat',
 sans-serif;
 $Text-font: 'Raleway',
 sans-serif;
-$Default-border: solid 2px $foreground-color;
+$Default-border: solid 2px $border-color;
 @mixin button($offset-x, $offset-y, $blur-radius, $color) {
     box-shadow: $offset-x $offset-y $blur-radius $color;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border: solid 2px $border-color;
+    border: solid 1px $border-color;
+    border-radius: 3px;
+}
+
+@keyframes Move {
+    from {
+        margin-top: 20vh;
+        opacity: 0;
+    }
+    to {
+        margin-top: 7vh;
+        opacity: 1;
+    }
+}
+
+@keyframes Fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

@@ -1,381 +1,408 @@
-@import "_variables";
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    font-size: 20px;
-}
-
-#Grid-container {
-    display: grid;
-    grid-template-columns: 100vw;
-    grid-template-rows: minmax(10vh, auto) minmax(85vh, auto) minmax(5vh, auto);
-    background-color: $background-color;
-}
-
-#Header-container {
-    z-index: 1000;
-    position: sticky;
-    top: 0;
-    background: $highlight-color-two;
-    display: grid;
-    width: 100%;
-    align-items: center;
-    justify-items: center;
-    font-family: $link-font;
-    color: $background-color;
-    box-shadow: 2px 0px 2px $border-color;
-    font-size: 1.2rem;
-    grid-template-columns: repeat(auto-fit, minmax(216px, auto));
-    #Logo-link {
-        max-height: 16vh;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
-        text-decoration: none;
+    @import "_variables";
+    * {
+        margin: 0;
+        padding: 0;
     }
-    .Phonenumber-class {
-        display: none;
+    
+    html {
+        font-size: 20px;
     }
-    a:link {
-        color: $background-color;
-        text-decoration: none;
-        padding: 0px 2px 0px 2px;
+    
+    #Grid-container {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: minmax(10vh, auto) minmax(85vh, auto) minmax(5vh, auto);
+        background-color: $background-color;
     }
-    a:visited {
-        color: $background-color;
-    }
-    a:hover {
-        color: rgb(167, 153, 127);
-    }
-    .Active-link {
-        border-bottom: solid 2px $background-color;
-    }
-    img {
-        height: 100%;
-    }
-}
-
-#Content-container {
-    #Hungry-banner {
-        position: relative;
+    
+    #Header-container {
+        z-index: 1000;
+        position: sticky;
+        top: 0;
+        background: $highlight-color-two;
+        display: grid;
         width: 100%;
-        height: 70vh;
-        background-image: url(../Images/Pizza.jpg);
-        background-repeat: no-repeat;
-        background-size: 100vw;
-        #Hungry-text {
-            position: absolute;
-            top: 24vh;
-            left: 57%;
-            width: 30%;
-            text-align: center;
-            @include button(1px, 1px, 3px, $border-color);
-            #Hungry-question {
-                color: $background-color;
-                font-family: $link-font;
-                font-size: 1.9rem;
-                text-decoration: none;
-            }
-            .Hungry-answer {
-                color: $background-color;
-                font-family: $Text-font;
-                font-style: italic;
-                display: inline;
-            }
+        align-items: center;
+        justify-items: center;
+        font-family: $link-font;
+        color: $background-color;
+        box-shadow: 3px 0px 3px $border-color;
+        font-size: 1.3rem;
+        grid-template-columns: repeat(auto-fit, minmax(216px, auto));
+        #Logo-link {
+            max-height: 16vh;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            text-decoration: none;
+        }
+        .Phonenumber-class {
+            display: none;
+        }
+        a:link {
+            color: $background-color;
+            text-decoration: none;
+            padding: 0px 2px 0px 2px;
+        }
+        a:visited {
+            color: $background-color;
+        }
+        a:hover {
+            color: rgb(167, 153, 127);
+        }
+        .Active-link {
+            border-bottom: solid 2px $background-color;
+        }
+        img {
+            height: 100%;
         }
     }
-    #Homepage-text {
-        font-family: $Text-font;
-        text-align: center;
-        margin: 7%;
-    }
-    #Tossing-pizza-container {
-        width: 40vw;
-        #Tossing-pizza {
-            width: 100%;
+    
+    #Content-container {
+        #Hungry-banner {
             position: relative;
-            left: 30vw;
-            margin-bottom: 10vh;
-        }
-    }
-    #Opening-hours {
-        padding: 10vh 7vw 10vh 7vw;
-        margin: 15vh 10vw 15vh 10vw;
-        border-bottom: $Default-border;
-        border-top: $Default-border;
-        font-family: $link-font;
-        font-size: 3.5rem;
-        text-align: center;
-    }
-}
-
-.Menu-headers {
-    font-family: $link-font;
-    margin: 7vh 5vw 0vh 5vw;
-    padding-bottom: 4px;
-    color: $foreground-color;
-    font-size: 1.2rem;
-    border-bottom: $Default-border;
-}
-
-.Menu-grid {
-    display: grid;
-    margin: 5vh 5vw 2vh 5vw;
-    width: 90vw;
-    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-    column-gap: 5vh;
-    row-gap: 6vh;
-    justify-items: center;
-    .Pizza-item-container {
-        width: 330px;
-        height: 415px;
-        background-color: white;
-        border: 1px solid $foreground-color;
-        border-radius: 5px;
-        text-align: center;
-        align-items: center;
-    }
-    .Menu-item-container {
-        width: 340px;
-        height: 200px;
-        background-color: white;
-        border: 1px solid $foreground-color;
-        border-radius: 5px;
-        text-align: center;
-        align-items: center;
-    }
-    .Buy-now-button {
-        @include button(1px, 1px, 3px, $border-color)
-    }
-    .Menu-images {
-        width: 90%;
-        border-radius: 10px;
-    }
-    .Menu-header {
-        font-size: 1.1rem;
-        font-family: $link-font;
-        color: $highlight-color-two;
-        margin: 5px;
-        padding: 2px;
-        display: inline-block;
-    }
-    .Menu-prices {
-        font-family: $Text-font;
-        color: $foreground-color;
-        font-size: 1.1rem;
-        display: inline-block;
-        margin-bottom: 5px;
-    }
-    .Menu-text {
-        font-size: 0.8rem;
-        font-family: $Text-font;
-        margin: 4px;
-        color: $foreground-color
-    }
-}
-
-#Header-video-grid {
-    display: grid;
-    grid-template-columns: 100VW;
-    grid-template-rows: auto 60vh;
-    justify-items: center;
-    #Page-header {
-        font-family: $link-font;
-        font-size: 1.9rem;
-        color: $foreground-color;
-        text-align: center;
-        margin: 10vh 5vw 10vh 5vw;
-        padding-bottom: 2vh;
-        border-bottom: $Default-border;
-    }
-    #Pizza-video {
-        height: 100%;
-    }
-}
-
-#About-us-grid {
-    display: grid;
-    margin: 20vh 6vw 5vh 6vw;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-items: center;
-    column-gap: 4vw;
-    row-gap: 5vh;
-    .About-us-header {
-        padding: 5px 1px 7px 1px;
-        border-bottom: $Default-border;
-        font-family: $link-font;
-        color: $foreground-color;
-    }
-    .About-us-text {
-        padding-left: 4px;
-        font-family: $Text-font;
-        color: $foreground-color;
-        padding-bottom: 5px;
-        padding-top: 5px;
-    }
-    #About-us-italics {
-        font-style: italic;
-    }
-    #Who-are-we-image {
-        width: 100%;
-    }
-    #Pizza-on-table-image {
-        width: 100%;
-    }
-    .About-us-images {
-        border: 1px solid $foreground-color;
-        border-radius: 5px;
-        box-shadow: 1px 1px 2px $foreground-color;
-    }
-}
-
-#Location {
-    width: 100vw;
-    #Location-header {
-        font-family: $link-font;
-        font-size: 1.9rem;
-        color: $foreground-color;
-        border-top: $Default-border;
-        text-align: center;
-        margin-left: 4vw;
-        margin-right: 4vw;
-        padding-top: 5vh;
-    }
-    #Maps-location {
-        padding: 5vh 4vw 10vh 4vw;
-        margin: 0vh 6vw 0vh 6vw;
-        width: 80%;
-        height: 500px;
-    }
-}
-
-#Footer-container {
-    display: grid;
-    grid-template-columns: 45vw 45vw;
-    grid-template-rows: 1fr;
-    background-color: $foreground-color;
-    font-size: 0.8rem;
-    padding: 5vh 5vw 5vh 5vw;
-    font-family: $Text-font;
-    #Right-footer-column {
-        text-align: right;
-    }
-}
-
-@media (max-width: 1024px) and (orientation:portrait) {
-    #Header-container {
-        grid-template-rows: 17vh repeat(3, 4vh);
-        grid-template-columns: 1fr;
-        font-size: 1.2rem;
-    }
-    #Empty-div {
-        display: none;
-    }
-    #Header-container #Phonenumber-link {
-        display: block;
-    }
-    #Phonenumber-text {
-        display: none;
-    }
-    #Content-container {
-        #Hungry-banner {
-            height: 40vh;
+            width: 100%;
+            height: 70vh;
+            background-image: url(../Images/Pizza.jpg);
+            background-repeat: no-repeat;
+            background-size: 100vw;
+            animation: Fade 3s;
             #Hungry-text {
                 position: absolute;
-                top: 13vh;
+                top: 24vh;
                 left: 57%;
-                width: 40%;
-                height: 30%;
-            }
-        }
-        #Opening-hours {
-            font-size: 2.0rem;
-        }
-    }
-    #About-us-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        margin: 2vh 3vw 3vh 3vw;
-        align-items: center;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 430px) {
-    #Header-container {
-        top: -128px;
-        grid-template-rows: 17vh repeat(3, 6vh);
-        grid-template-columns: 1fr;
-        row-gap: 4px;
-    }
-    #Empty-div {
-        display: none;
-    }
-    #Header-container #Phonenumber-link {
-        display: block;
-    }
-    #Phonenumber-text {
-        display: none;
-    }
-    #Content-container {
-        #Hungry-banner {
-            height: 40vh;
-            #Hungry-text {
-                position: absolute;
-                top: 6vh;
-                left: 17%;
-                width: 60%;
-                height: auto;
-                font-size: 0.8rem;
+                width: 30%;
+                text-align: center;
+                @include button(1px, 1px, 3px, $border-color);
+                background-color: rgba(10, 10, 10, 0.6);
                 #Hungry-question {
-                    font-size: 1.2rem;
+                    color: $background-color;
+                    font-family: $link-font;
+                    font-size: 1.9rem;
+                    text-decoration: none;
                 }
-            }
-        }
-        #Tossing-pizza-container {
-            width: 100vw;
-            #Tossing-pizza {
-                left: 0;
+                .Hungry-answer {
+                    color: $background-color;
+                    font-family: $Text-font;
+                    font-style: italic;
+                    display: inline;
+                }
             }
         }
         #Homepage-text {
-            margin: 5vh 10vw 5vh 10vw
+            font-family: $Text-font;
+            text-align: center;
+            margin: 7%;
+        }
+        #Video-container {
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            #Pizza-video {
+                max-width: 800px;
+                margin-bottom: 10vh;
+            }
+        }
+        #Tossing-pizza-container {
+            width: 40vw;
+            #Tossing-pizza {
+                width: 100%;
+                position: relative;
+                left: 30vw;
+                margin-bottom: 10vh;
+                border: $border-color solid 1.2px;
+                border-radius: 5px;
+            }
         }
         #Opening-hours {
-            font-size: 1.8rem;
-            margin: 0vh 10vw 5vh 10vw;
+            padding: 10vh 7vw 10vh 7vw;
+            margin: 15vh 10vw 15vh 10vw;
+            border-bottom: $Default-border;
+            border-top: $Default-border;
+            font-family: $link-font;
+            font-size: 3.5rem;
+            text-align: center;
         }
     }
+    
+    .Menu-headers {
+        font-family: $link-font;
+        margin: 7vh 5vw 0vh 5vw;
+        padding-bottom: 4px;
+        color: $border-color;
+        font-size: 1.7rem;
+        border-bottom: $Default-border;
+        animation: Move 2s;
+    }
+    
+    .Menu-grid {
+        display: grid;
+        margin: 5vh 5vw 5vh 5vw;
+        width: 90vw;
+        grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+        column-gap: 5vh;
+        row-gap: 6vh;
+        justify-items: center;
+        animation: Fade 3s;
+        .Pizza-item-container {
+            width: 330px;
+            height: 470px;
+            background-color: white;
+            border: 1.2px solid $foreground-color;
+            box-shadow: 0px 0px 2px;
+            border-radius: 5px;
+            text-align: center;
+            align-items: center;
+        }
+        .Menu-item-container {
+            width: 340px;
+            height: 250px;
+            background-color: white;
+            border: 1.2px solid $border-color;
+            border-radius: 5px;
+            text-align: center;
+            align-items: center;
+        }
+        .Buy-now-button {
+            @include button(1px, 1px, 2px, $border-color);
+            margin: 0% 30% 5% 30%;
+            font-family: $link-font;
+            color: $highlight-color-two;
+        }
+        .Menu-images {
+            width: 90%;
+            border-radius: 10px;
+            opacity: 0.8;
+        }
+        .Menu-images:hover {
+            opacity: 1.0;
+        }
+        .Menu-header {
+            font-size: 1.1rem;
+            font-family: $link-font;
+            color: $border-color;
+            margin: 10px;
+            padding: 2px;
+            display: inline-block;
+        }
+        .Menu-prices {
+            font-family: $Text-font;
+            color: $highlight-color-two;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .Menu-text {
+            font-size: 0.8rem;
+            font-family: $Text-font;
+            margin: 10px;
+            color: $foreground-color
+        }
+    }
+    
+    #Page-header {
+        font-family: $link-font;
+        font-size: 1.7rem;
+        color: $border-color;
+        text-align: center;
+        margin: 7vh 5vw 0vh 5vw;
+        padding-bottom: 2vh;
+        border-bottom: $Default-border;
+        animation: Move 2s;
+    }
+    
     #About-us-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: 190px 1fr 220px 1fr;
+        display: grid;
+        margin: 15vh 10vw 10vh 10vw;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        column-gap: 4vw;
+        row-gap: 5vh;
+        animation: Move 2s;
+        animation: Fade 3s;
+        .About-us-header {
+            padding: 5px 1px 7px 1px;
+            margin-bottom: 5px;
+            border-bottom: $Default-border;
+            font-family: $link-font;
+            color: $border-color;
+        }
+        .About-us-text {
+            padding-left: 4px;
+            font-family: $Text-font;
+            color: $foreground-color;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+        #About-us-italics {
+            font-style: italic;
+        }
+        #Who-are-we-image {
+            width: 100%;
+        }
+        #Pizza-on-table-image {
+            width: 100%;
+        }
+        .About-us-images {
+            border: 1px solid $foreground-color;
+            border-radius: 5px;
+            box-shadow: 1px 1px 2px $foreground-color;
+        }
     }
-    #Location #Maps-location {
-        height: 400px;
+    
+    #Location {
+        width: 100vw;
+        #Location-header {
+            font-family: $link-font;
+            font-size: 1.9rem;
+            color: $border-color;
+            border-top: $Default-border;
+            text-align: center;
+            margin-left: 4vw;
+            margin-right: 4vw;
+            padding-top: 5vh;
+        }
+        #Maps-location {
+            padding: 5vh 4vw 10vh 4vw;
+            margin: 0vh 6vw 0vh 6vw;
+            width: 80%;
+            height: 500px;
+        }
     }
-}
-
-@media (max-width: 375px) {
-    #Header-container {
-        top: -105px;
+    
+    #Footer-container {
+        display: grid;
+        grid-template-columns: 45vw 45vw;
+        grid-template-rows: 1fr;
+        background-color: $foreground-color;
+        font-size: 0.8rem;
+        padding: 5vh 5vw 5vh 5vw;
+        font-family: $Text-font;
+        #Right-footer-column {
+            text-align: right;
+        }
     }
-    #Content-container {
-        #Hungry-banner {
-            height: 40vh;
-            #Hungry-text {
-                position: absolute;
-                top: 5vh;
-                left: 17%;
-                width: 60%;
-                height: auto;
-                font-size: 0.8rem;
-                #Hungry-question {
-                    font-size: 1.2rem;
+    
+    @media (max-width: 1024px) and (orientation:portrait) {
+        #Header-container {
+            grid-template-rows: 17vh repeat(3, 4vh);
+            grid-template-columns: 1fr;
+            font-size: 1.2rem;
+            top: 0px;
+        }
+        #Empty-div {
+            display: none;
+        }
+        #Header-container #Phonenumber-link {
+            display: block;
+        }
+        #Phonenumber-text {
+            display: none;
+        }
+        #Content-container {
+            #Hungry-banner {
+                height: 40vh;
+                #Hungry-text {
+                    position: absolute;
+                    top: 13vh;
+                    left: 33%;
+                }
+            }
+            #Opening-hours {
+                font-size: 2.0rem;
+            }
+            #Video-container {
+                #Pizza-video {
+                    max-width: 100vw;
+                }
+            }
+        }
+        #Pizza-menu .Menu-grid .Pizza-item-container .Menu-images {
+            opacity: 1.0;
+        }
+        #About-us-grid {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin: 2vh 4vw 3vh 4vw;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (max-width: 430px) {
+        #Header-container {
+            top: -128px;
+            grid-template-rows: 17vh repeat(3, 6vh);
+            grid-template-columns: 1fr;
+            row-gap: 4px;
+        }
+        #Empty-div {
+            display: none;
+        }
+        #Header-container #Phonenumber-link {
+            display: block;
+        }
+        #Phonenumber-text {
+            display: none;
+        }
+        #Content-container {
+            #Hungry-banner {
+                height: 40vh;
+                #Hungry-text {
+                    position: absolute;
+                    top: 6vh;
+                    left: 17%;
+                    width: 60%;
+                    height: auto;
+                    font-size: 0.8rem;
+                    #Hungry-question {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            #Video-container {
+                #Pizza-video {
+                    max-width: 100vw;
+                }
+            }
+            #Homepage-text {
+                margin: 5vh 10vw 5vh 10vw
+            }
+            #Opening-hours {
+                font-size: 1.8rem;
+                margin: 0vh 10vw 5vh 10vw;
+            }
+        }
+        #Pizza-menu .Menu-grid .Pizza-item-container .Menu-images {
+            opacity: 1.0;
+        }
+        #About-us-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr)
+        }
+        #Location #Maps-location {
+            height: 400px;
+        }
+    }
+    
+    @media (max-width: 375px) {
+        #Header-container {
+            top: -105px;
+        }
+        #Content-container {
+            #Hungry-banner {
+                height: 40vh;
+                #Hungry-text {
+                    position: absolute;
+                    top: 5vh;
+                    left: 17%;
+                    width: 60%;
+                    height: auto;
+                    font-size: 0.8rem;
+                    #Hungry-question {
+                        font-size: 1.2rem;
+                    }
                 }
             }
         }
     }
-}
