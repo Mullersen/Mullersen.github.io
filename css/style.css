@@ -367,7 +367,7 @@ html {
 #About-us-page #About-us-container #About-us-grid {
   display: -ms-grid;
   display: grid;
-  margin: 15vh 10vw 10vh 10vw;
+  margin: 7vh 10vw 10vh 10vw;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 1fr;
